@@ -64,18 +64,10 @@
 		3F3E32F01E64DAA300001BEE /* Cats */ = {
 			isa = PBXGroup;
 			children = (
-				3F3E32F41E64DAA300001BEE /* AppDelegate.h */,
-				3F3E32F51E64DAA300001BEE /* AppDelegate.m */,
-				3F3E32F71E64DAA300001BEE /* ViewController.h */,
-				3F3E32F81E64DAA300001BEE /* ViewController.m */,
-				3F3E330B1E651A1A00001BEE /* PhotoCell.h */,
-				3F3E330C1E651A1A00001BEE /* PhotoCell.m */,
-				3F3E33081E64E78A00001BEE /* Photo.h */,
-				3F3E33091E64E78A00001BEE /* Photo.m */,
-				3F3E32FA1E64DAA300001BEE /* Main.storyboard */,
-				3F3E32FD1E64DAA300001BEE /* Assets.xcassets */,
-				3F3E32FF1E64DAA300001BEE /* LaunchScreen.storyboard */,
-				3F3E33021E64DAA300001BEE /* Info.plist */,
+				3F3E33111E66106600001BEE /* UI */,
+				3F3E33101E66106500001BEE /* Model */,
+				3F3E330F1E66106000001BEE /* Controller */,
+				3F3E330E1E66105C00001BEE /* View */,
 				3F3E32F11E64DAA300001BEE /* Supporting Files */,
 			);
 			path = Cats;
@@ -84,9 +76,49 @@
 		3F3E32F11E64DAA300001BEE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3F3E32FD1E64DAA300001BEE /* Assets.xcassets */,
+				3F3E33021E64DAA300001BEE /* Info.plist */,
 				3F3E32F21E64DAA300001BEE /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3F3E330E1E66105C00001BEE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3F3E330B1E651A1A00001BEE /* PhotoCell.h */,
+				3F3E330C1E651A1A00001BEE /* PhotoCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3F3E330F1E66106000001BEE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3F3E32F41E64DAA300001BEE /* AppDelegate.h */,
+				3F3E32F51E64DAA300001BEE /* AppDelegate.m */,
+				3F3E32F71E64DAA300001BEE /* ViewController.h */,
+				3F3E32F81E64DAA300001BEE /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		3F3E33101E66106500001BEE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F3E33081E64E78A00001BEE /* Photo.h */,
+				3F3E33091E64E78A00001BEE /* Photo.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3F3E33111E66106600001BEE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3F3E32FF1E64DAA300001BEE /* LaunchScreen.storyboard */,
+				3F3E32FA1E64DAA300001BEE /* Main.storyboard */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +351,7 @@
 				3F3E33071E64DAA300001BEE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
