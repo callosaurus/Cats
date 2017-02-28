@@ -15,4 +15,16 @@
     self.completeURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://farm%@.staticflickr.com/%@/%@_%@.jpg", self.farmID, self.serverID, self.idNumber, self.secret]];
 }
 
+-(instancetype) initWithFarm:(NSString *)farm server:(NSString *)server idNumber:(NSString *)idNumber secret:(NSString *)secret andTitle:(NSString *)title
+{
+        if (self == [super init]) {
+            self.farmID = farm;
+            self.serverID = server;
+            self.idNumber = idNumber;
+            self.secret = secret;
+            self.photoTitle = title;
+        }
+        return self;
+}
+
 @end

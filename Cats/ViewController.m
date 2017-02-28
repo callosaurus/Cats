@@ -7,9 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "PhotoCell.h"
 #import "Photo.h"
 
 @interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
 
 @property NSMutableArray *catPhotoObjectsArray;
 
@@ -33,7 +37,7 @@
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     
-    NSURLSessionDataTask *downloadTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if (error) {
             NSLog(@"error: %@", error.localizedDescription);
@@ -50,6 +54,8 @@
         }
         
         
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        
         NSDictionary *JSONstep1 = [parsedJSON valueForKey:@"photos"];
         NSArray *arrayOfPhotoDictionaries = [JSONstep1 valueForKey:@"photo"];
         
@@ -57,22 +63,23 @@
         for (NSDictionary *catPhotoDictionary in arrayOfPhotoDictionaries) {
             
             //new Photo object
-            Photo *newCatPhoto = [[Photo alloc] init];
-            newCatPhoto.farmID = [catPhotoDictionary valueForKey:@"farm"];
-            newCatPhoto.serverID = [catPhotoDictionary valueForKey:@"server"];
-            newCatPhoto.secret = [catPhotoDictionary valueForKey:@"secret"];
-            newCatPhoto.idNumber = [catPhotoDictionary valueForKey:@"id"];
-            newCatPhoto.photoTitle = [catPhotoDictionary valueForKey:@"title"];
+            Photo *newCatPhoto = [[Photo alloc] initWithFarm:[catPhotoDictionary valueForKey:@"farm"]
+                                                      server:[catPhotoDictionary valueForKey:@"server"]
+                                                    idNumber:[catPhotoDictionary valueForKey:@"id"]
+                                                      secret:[catPhotoDictionary valueForKey:@"secret"]
+                                                    andTitle:[catPhotoDictionary valueForKey:@"title"]];
+            
             [newCatPhoto makeCompleteURL];
             
             [self.catPhotoObjectsArray addObject:newCatPhoto];
         }
         
-        NSLog(@"object ONE: %@", [self.catPhotoObjectsArray objectAtIndex:0]);
-        
+        [self.collectionView reloadData];
+            
+        }];
     }];
     
-    [downloadTask resume];
+    [dataTask resume];
     
 }
 
@@ -92,5 +99,11 @@
     return [self.catPhotoObjectsArray count];
 }
 
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    PhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    cell.photo = self.catPhotoObjectsArray[indexPath.item];
+    return cell;
+}
 
 @end

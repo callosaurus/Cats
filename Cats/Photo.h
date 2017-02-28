@@ -18,5 +18,6 @@
 @property (nonatomic, strong) NSURL *completeURL;
 
 -(void)makeCompleteURL;
+-(instancetype) initWithFarm:(NSString *)farm server:(NSString *)server idNumber:(NSString *)idNumber secret:(NSString *)secret andTitle:(NSString *)title;
 
 @end
