@@ -13,6 +13,7 @@
 		3F3E32FC1E64DAA300001BEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3E32FA1E64DAA300001BEE /* Main.storyboard */; };
 		3F3E32FE1E64DAA300001BEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3E32FD1E64DAA300001BEE /* Assets.xcassets */; };
 		3F3E33011E64DAA300001BEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3E32FF1E64DAA300001BEE /* LaunchScreen.storyboard */; };
+		3F3E330A1E64E78A00001BEE /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3E33091E64E78A00001BEE /* Photo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		3F3E32FD1E64DAA300001BEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F3E33001E64DAA300001BEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F3E33021E64DAA300001BEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F3E33081E64E78A00001BEE /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		3F3E33091E64E78A00001BEE /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				3F3E32F51E64DAA300001BEE /* AppDelegate.m */,
 				3F3E32F71E64DAA300001BEE /* ViewController.h */,
 				3F3E32F81E64DAA300001BEE /* ViewController.m */,
+				3F3E33081E64E78A00001BEE /* Photo.h */,
+				3F3E33091E64E78A00001BEE /* Photo.m */,
 				3F3E32FA1E64DAA300001BEE /* Main.storyboard */,
 				3F3E32FD1E64DAA300001BEE /* Assets.xcassets */,
 				3F3E32FF1E64DAA300001BEE /* LaunchScreen.storyboard */,
@@ -153,6 +158,7 @@
 				3F3E32F91E64DAA300001BEE /* ViewController.m in Sources */,
 				3F3E32F61E64DAA300001BEE /* AppDelegate.m in Sources */,
 				3F3E32F31E64DAA300001BEE /* main.m in Sources */,
+				3F3E330A1E64E78A00001BEE /* Photo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
