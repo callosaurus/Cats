@@ -31,7 +31,7 @@
     
     
     //fetch cat JSON from flickr
-    NSURL *url = [NSURL URLWithString:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=9b2069a2104b7db539c5b64982653c8d&tags=cat"];
+    NSURL *url = [NSURL URLWithString:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=9b2069a2104b7db539c5b64982653c8d&tags=cats"];
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
