@@ -28,10 +28,11 @@
 
     NSLog(@"%@", self.photo.completeURL);
     
-    NSURL *photoURL = self.photo.completeURL;
+//    [[NSURLComponents alloc] initWithString:self.photo.completeURL];
+    
+    NSURL *photoURL = [NSURL URLWithString:self.photo.completeURL];
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     
     NSURLSessionDownloadTask *downloadTask = [session downloadTaskWithURL:photoURL completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -44,6 +45,8 @@
         NSData *data = [NSData dataWithContentsOfURL:location];
         
         UIImage *imageToBeDisplayed = [UIImage imageWithData:data];
+        
+        self.photo.photoImage = imageToBeDisplayed;
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             self.photoCellImageView.image = imageToBeDisplayed;

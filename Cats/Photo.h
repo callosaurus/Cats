@@ -7,17 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 
-@interface Photo : NSObject
+@interface Photo : NSObject <MKAnnotation> 
 
-@property (nonatomic, strong) NSString *farmID;
-@property (nonatomic, strong) NSString *serverID;
 @property (nonatomic, strong) NSString *idNumber;
-@property (nonatomic, strong) NSString *secret;
+@property (nonatomic, strong) NSString *completeURL;
 @property (nonatomic, strong) NSString *photoTitle;
-@property (nonatomic, strong) NSURL *completeURL;
+@property (nonatomic, strong) UIImage *photoImage;
 
--(void)makeCompleteURL;
--(instancetype) initWithFarm:(NSString *)farm server:(NSString *)server idNumber:(NSString *)idNumber secret:(NSString *)secret andTitle:(NSString *)title;
+-(instancetype) initWithTitle:(NSString *)title IDNumber: (NSString *)idNumber andURL:(NSString *)url;
 
 @end

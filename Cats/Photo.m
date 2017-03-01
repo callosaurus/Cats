@@ -10,19 +10,13 @@
 
 @implementation Photo
 
--(void)makeCompleteURL
-{
-    self.completeURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://farm%@.staticflickr.com/%@/%@_%@.jpg", self.farmID, self.serverID, self.idNumber, self.secret]];
-}
-
--(instancetype) initWithFarm:(NSString *)farm server:(NSString *)server idNumber:(NSString *)idNumber secret:(NSString *)secret andTitle:(NSString *)title
+-(instancetype) initWithTitle:(NSString *)title IDNumber: (NSString *)idNumber andURL:(NSString *)url
 {
         if (self == [super init]) {
-            self.farmID = farm;
-            self.serverID = server;
-            self.idNumber = idNumber;
-            self.secret = secret;
+            
             self.photoTitle = title;
+            self.idNumber = idNumber;
+            self.completeURL = url;
         }
         return self;
 }

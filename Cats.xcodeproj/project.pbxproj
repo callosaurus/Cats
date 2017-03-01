@@ -15,6 +15,8 @@
 		3F3E33011E64DAA300001BEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3E32FF1E64DAA300001BEE /* LaunchScreen.storyboard */; };
 		3F3E330A1E64E78A00001BEE /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3E33091E64E78A00001BEE /* Photo.m */; };
 		3F3E330D1E651A1A00001BEE /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3E330C1E651A1A00001BEE /* PhotoCell.m */; };
+		3F3E33141E6657F100001BEE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F3E33131E6657F100001BEE /* MapKit.framework */; };
+		3F3E33171E6669D800001BEE /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F3E33161E6669D800001BEE /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,9 @@
 		3F3E33091E64E78A00001BEE /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		3F3E330B1E651A1A00001BEE /* PhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCell.h; sourceTree = "<group>"; };
 		3F3E330C1E651A1A00001BEE /* PhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCell.m; sourceTree = "<group>"; };
+		3F3E33131E6657F100001BEE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		3F3E33151E6669D800001BEE /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		3F3E33161E6669D800001BEE /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F3E33141E6657F100001BEE /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +56,7 @@
 			children = (
 				3F3E32F01E64DAA300001BEE /* Cats */,
 				3F3E32EF1E64DAA300001BEE /* Products */,
+				3F3E33121E6657F000001BEE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +106,8 @@
 				3F3E32F51E64DAA300001BEE /* AppDelegate.m */,
 				3F3E32F71E64DAA300001BEE /* ViewController.h */,
 				3F3E32F81E64DAA300001BEE /* ViewController.m */,
+				3F3E33151E6669D800001BEE /* DetailViewController.h */,
+				3F3E33161E6669D800001BEE /* DetailViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -119,6 +128,14 @@
 				3F3E32FA1E64DAA300001BEE /* Main.storyboard */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		3F3E33121E6657F000001BEE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F3E33131E6657F100001BEE /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +214,7 @@
 				3F3E32F61E64DAA300001BEE /* AppDelegate.m in Sources */,
 				3F3E32F31E64DAA300001BEE /* main.m in Sources */,
 				3F3E330A1E64E78A00001BEE /* Photo.m in Sources */,
+				3F3E33171E6669D800001BEE /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
