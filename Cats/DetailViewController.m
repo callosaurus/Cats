@@ -55,7 +55,9 @@
         
         self.photo.coordinate = CLLocationCoordinate2DMake([latitudeNumber doubleValue], [longitudeNumber doubleValue]);
         
-        [self setMapView];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self setMapView];
+        });
         
     }];
     

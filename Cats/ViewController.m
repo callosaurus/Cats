@@ -49,9 +49,7 @@
             return;
         }
         
-        
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            
+        dispatch_async(dispatch_get_main_queue(), ^{
             NSDictionary *JSONstep1 = [parsedJSON valueForKey:@"photos"];
             NSArray *arrayOfPhotoDictionaries = [JSONstep1 valueForKey:@"photo"];
             
@@ -64,8 +62,13 @@
             }
             
             [self.collectionView reloadData];
-            
-        }];
+
+        });
+        
+//        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//            
+//            
+//        }];
     }];
     
     [dataTask resume];

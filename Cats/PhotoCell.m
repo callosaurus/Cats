@@ -8,6 +8,11 @@
 
 #import "PhotoCell.h"
 
+@interface PhotoCell()
+
+@property (nonatomic) NSURLSessionDownloadTask *downloadTask;
+
+@end
 
 @implementation PhotoCell
 
@@ -35,7 +40,7 @@
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     
-    NSURLSessionDownloadTask *downloadTask = [session downloadTaskWithURL:photoURL completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    self.downloadTask = [session downloadTaskWithURL:photoURL completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if (error) {
             NSLog(@"error: %@", error.localizedDescription);
@@ -54,7 +59,16 @@
         
     }];
     
-    [downloadTask resume];
+    [self.downloadTask resume];
+    
+}
+
+-(void)prepareForReuse{
+    [super prepareForReuse];
+    
+    [self.downloadTask cancel];
+    
+    
     
 }
 
