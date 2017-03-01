@@ -101,6 +101,7 @@
                     </view>
                     <connections>
                         <outlet property="detailImageView" destination="4XC-5B-oHO" id="kET-eT-zIa"/>
+                        <outlet property="mapView" destination="bQ5-to-N4Y" id="8Hv-NR-lXp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27A-CK-ZAP" userLabel="First Responder" sceneMemberID="firstResponder"/>

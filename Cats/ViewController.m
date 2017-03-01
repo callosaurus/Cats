@@ -27,8 +27,8 @@
     //initialize
     self.catPhotoObjectsArray = [[NSMutableArray alloc] init];;
     
-    //fetch cat JSON from flickr
-    NSURL *url = [NSURL URLWithString:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=9b2069a2104b7db539c5b64982653c8d&tags=cats&has_geo=&extras=url_m&format=json"];
+    //set up URL - TO BE ENCAPSULATED WITH NETWORK MANAGER etc
+    NSURL *url = [NSURL URLWithString:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=9b2069a2104b7db539c5b64982653c8d&tags=cats&has_geo=1&extras=url_m&format=json"];
     NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:url];
     
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -95,17 +95,14 @@
     return cell;
 }
 
-//-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    [self performSegueWithIdentifier:@"moreDetail" sender:self];
-//}
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(PhotoCell *)sender
 {
     DetailViewController *detailVC = [[DetailViewController alloc] init];
     detailVC = segue.destinationViewController;
     Photo *newPhoto = sender.photo;
     detailVC.photo = newPhoto;
+    
+
 }
 
 @end
